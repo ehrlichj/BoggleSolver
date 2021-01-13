@@ -9,7 +9,7 @@ This project mainly uses two data structures a character array and trie. The cha
 ## Algorithm Description
 We iterate through the character array for each starting letter and then recursively build every possible string path. This solution on its own is very slow and as a result the algorithm has been optimized by limiting the depth of a search path. This is done by ensuring that for every string we will only add to its path if that string has a suffix in the trie. If it does not then we move off that search path and on to the next one. This signficantly decreased our run time since our Trie dictionary implementation allows for a very efficient check for prefixs and suffixs.
 
-## 
+## Command Line Directions
 To run the project download the repository and make the project folder your wokring directory. Then type into your command line:
 
 ```bash
