@@ -8,6 +8,7 @@ public class Dice{
     private char[] letters;
 
     public static char[][] diceConfigs =  new char[26][6];
+
     public Dice(int dieNum){
         if(dieNum>25){
             dieNum = dieNum % 25;
@@ -24,6 +25,7 @@ public class Dice{
         this.showing = letter;
     }
 
+    //roll die by picking a random letter from the char[]
     public void rollDie(){
         Random rand = new Random();
 
@@ -35,6 +37,7 @@ public class Dice{
 
     }
 
+    //initalize the static data configs variable by reading the configs from a text file.
     public static void initializeDiceConfigsNew(){
         int nextConfig = 0;
         try{
