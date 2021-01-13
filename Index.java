@@ -13,7 +13,7 @@ public class Index{
         try{
             File words = new File("words.txt");
             Scanner myReader =new Scanner(words);
-
+    
         while(myReader.hasNextLine()){
             String data = myReader.nextLine();
             if(data.length()>=3){
@@ -27,10 +27,16 @@ public class Index{
             e.printStackTrace();
         }
 
-
+        //get board parameters from user
+        Scanner scanDim = new Scanner(System.in);
+        System.out.println("Please enter a board height: ");
+        int boardHeight = scanDim.nextInt();
+        System.out.println("Please enter a board width: ");
+        int boardWidth = scanDim.nextInt();
+        scanDim.close();
 
         //Create board object.
-        Board myBoard = new Board(5,5, myTrie);
+        Board myBoard = new Board(boardHeight,boardWidth, myTrie);
 
         System.out.println("Boggle Board:\n" + myBoard);
 

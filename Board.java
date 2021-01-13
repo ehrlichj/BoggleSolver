@@ -127,8 +127,8 @@ public class Board{
 //toString method to show the board
     public String toString(){
         String ret = "";
-        for(int r=0; r<this.board.length;r++){
-            for(int c=0;c<this.board[0].length;c++){
+        for(int r=0; r<this.height;r++){
+            for(int c=0;c<this.width;c++){
                 ret = ret + " " + this.board[r][c];
             }
             ret = ret + "\n";
