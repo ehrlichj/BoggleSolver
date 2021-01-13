@@ -20,15 +20,23 @@ public class Board{
     //creates the board. The board is currently hard coded but currently working on a dynamic implemenation.
     private char[][] makeBoard(int height, int widht){
         char[][] ret = new char[height][width];
-        ret[0] = new char[]{'R','T','A','A','C'};
+        /* ret[0] = new char[]{'R','T','A','A','C'};
         ret[1] = new char[]{'L','Y','I','U','C'};
         ret[2] = new char[]{'E','O','N','D','U'};
         ret[3] = new char[]{'R','A','B','I','O'};
-        ret[4] = new char[]{'A','H','R','O','I'};
+        ret[4] = new char[]{'A','H','R','O','I'}; */
 
-        /*ret[0] = new char[]{'G','I','Z'};
-        ret[1] = new char[]{'U','E','K'};
-        ret[2] = new char[]{'Q','S','E'};*/
+        int dieNum = 0;
+        for(int r=0; r<height; r++){
+            for(int c=0; c<width; c++){
+                Dice die = new Dice(dieNum);
+                die.rollDie();
+
+                ret[r][c] = die.getShowing();
+                dieNum++;
+            }
+        }
+        
 
         return ret;
 
@@ -48,7 +56,7 @@ public class Board{
 
         //update the string path
         s = s + board[i][j];
-        System.out.println(s);
+        //System.out.println(s);
 
         //check if string path in dictionary
         if(dictionary.contains(s)){

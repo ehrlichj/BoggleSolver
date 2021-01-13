@@ -3,14 +3,13 @@ import java.util.*;
 public class Index{
 
     public static void main(String[] args){
-
-        //Array represantion of the global dictionary.
-        //String[] dictionary = new String[]{"HELLOWORLD", "RABID", "GEEKS","FOR","QUIZ","GO","GUESS","GEEK","BOY","A","AND","REAR","RARE","BOAR","ROBIN"};
         
         //Create Trie for dictionary.
+        Dice.initializeDiceConfigsNew();
         Trie_Node root = new Trie_Node('*');
         Trie myTrie = new Trie(root);
 
+        //add words from word list to dictionary
         try{
             File words = new File("words.txt");
             Scanner myReader =new Scanner(words);
@@ -29,15 +28,13 @@ public class Index{
         }
 
 
-        //add words to the Trie dictionary
-       // for(int i=0;i<dictionary.length; i++){
-         //   myTrie.add(dictionary[i]);
-        //}
-
 
         //Create board object.
         Board myBoard = new Board(5,5, myTrie);
 
+        System.out.println("Boggle Board:\n" + myBoard);
+
+        System.out.println("Solution: ");
         //find all words that are in the dictionary and can be made on the boggle board.
         myBoard.solve();
         System.out.println(myBoard.getFoundWords());
