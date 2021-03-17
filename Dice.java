@@ -11,7 +11,7 @@ public class Dice{
 
     public Dice(int dieNum){
         if(dieNum>25){
-            dieNum = dieNum % 25;
+            dieNum = dieNum % 26;
         }
         this.letters = Dice.diceConfigs[dieNum];
 

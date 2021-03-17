@@ -47,13 +47,6 @@ public class Index{
     
     }
 
-    //return the index for children list based on the letters ASCII value.
-    public static int getLetter_Index(char letter){
-        int ascii =  letter;
-        int letter_index = ascii-65;
-        return letter_index;
-    }
-
     public static void addWord(Trie trie, String word){
         trie.add(word);
     }
