@@ -88,7 +88,7 @@ public class Trie implements Vocabulary{
             }
         }
         ret = true;
-        return true;
+        return ret;
 
     }
     
