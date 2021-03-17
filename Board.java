@@ -86,7 +86,7 @@ public class Board{
         }
 
         //reset the string path
-        s = "" + s.charAt(s.length()-1);
+        s = "";
         visited[i][j] = false;
 
 
